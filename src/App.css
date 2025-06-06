@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  padding-top: 120px; /* header高さに応じて調整 */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 130px; /* ← 高さUP */
+  background: #f0f0f0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 20px;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
+}
+.logo-image {
+  max-width: 200px; /* ヘッダーに合わせて適宜調整 */
+  height: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.user-section button {
+  margin-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-bar {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.content {
+  padding: 0 20px;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.image {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.text-section {
+  flex: 1;
+}
+
+.text {
+  margin-bottom: 10px;
+}
+
+.tag-button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.heart {
+  font-size: 24px;
+  margin-left: 10px;
 }
