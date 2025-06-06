@@ -1,0 +1,75 @@
+/* src/components/Footer.css */
+
+.footer {
+  background-color: #f8f8f8; /* 薄いグレーをベースに */
+  border-top: 1px solid #e0e0e0;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ロゴ／サイト名部分 */
+.footer-logo {
+  flex: 1 1 auto;
+}
+
+.footer-logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ナビリンク部分 */
+.footer-nav {
+  flex: 2 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.footer-link {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #333;
+}
+
+/* コピーライト */
+.footer-copy {
+  flex: 1 1 auto;
+  text-align: right;
+  color: #999;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-logo {
+    margin-bottom: 12px;
+  }
+  .footer-nav {
+    margin-bottom: 12px;
+  }
+  .footer-copy {
+    text-align: center;
+  }
+}

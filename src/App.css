@@ -1,79 +1,248 @@
-body {
+/* ─────────────── reset 部分 ─────────────── */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
   font-family: sans-serif;
 }
+/* ─────────────────────────────────────────── */
 
+/* ───────────────────────────────────────────
+   全体コンテナ（中央寄せ＋最大幅）
+────────────────────────────────────────── */
 .app {
-  padding-top: 120px; /* header高さに応じて調整 */
+  padding-top: 120px;      /* ヘッダー固定分の余白 */
+  max-width: 1200px;       /* 画面幅が広すぎても1200pxまで */
+  margin: 0 auto;
 }
 
+/* ───────────────────────────────────────────
+   ヘッダー（固定）
+────────────────────────────────────────── */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 130px; /* ← 高さUP */
-  background: #f0f0f0;
+  height: 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  border-bottom: 1px solid #ccc;
   z-index: 1000;
 }
+
 .logo-image {
-  max-width: 200px; /* ヘッダーに合わせて適宜調整 */
+  max-width: 180px;
   height: auto;
+  margin-right: 40px;
 }
 
-.user-section button {
-  margin-left: 10px;
-}
-
-.search-bar {
-  margin: 20px;
+.user-section {
+  margin-left: auto;
   display: flex;
   gap: 10px;
 }
 
-.content {
-  padding: 0 20px;
+.user-section p {
+  margin-right: 10px;
 }
 
-.card {
+/* ───────────────────────────────────────────
+   検索バー
+────────────────────────────────────────── */
+.search-bar {
+  margin: 20px auto;
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 8px;
-  background: #fff;
+  gap: 10px;
+  max-width: 800px;
 }
 
-.image {
-  width: 160px;
-  height: 120px;
-  object-fit: cover;
-  margin-right: 20px;
+.search-bar input[type="text"] {
+  flex: none;
+  width: 300px;        /* ← これで横長すぎを解消 */
+  max-width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
 }
 
-.text-section {
-  flex: 1;
-}
-
-.text {
-  margin-bottom: 10px;
-}
-
-.tag-button {
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
+.search-bar button {
+  padding: 8px 12px;
+  border: 1px solid #555;
+  background-color: #fff;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.search-bar button:hover {
+  background-color: #eee;
 }
 
-.heart {
-  font-size: 24px;
-  margin-left: 10px;
+/* ───────────────────────────────────────────
+   イベント一覧テーブル
+────────────────────────────────────────── */
+.event-table {
+  width: 100%;
+  max-width: 1000px;     /* テーブルの最大幅を指定 */
+  margin: 0 auto 40px;   /* 中央寄せ＋下に余白 */
+  border-collapse: collapse;
+}
+
+/* 見出しセル */
+.event-table th {
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: left;
+  padding: 12px 16px;    /* 左右余白を広めに */
+  border: 1px solid #ddd;
+  font-weight: normal;
+}
+
+.event-table .th-date {
+  width: 120px;
+}
+.event-table .th-image {
+  width: 100px;
+}
+.event-table .th-location {
+  width: 90px;
+  text-align: center;
+}
+.event-table .th-capacity {
+  width: 70px;
+  text-align: center;
+}
+
+/* ボディ行 */
+.event-table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+/* 通常セル */
+.event-table td {
+  padding: 12px 16px;   /* 左右余白を広めに */
+  vertical-align: top;
+  border: 1px solid #ddd;
+}
+
+.td-date {
+  white-space: pre-line;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: #333;
+}
+
+.event-image {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+.event-link {
+  display: inline-block;
+  font-size: 15px;
+  color: #228B22;
+  text-decoration: none;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.event-link:hover {
+  text-decoration: underline;
+}
+
+.event-host {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.event-description {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.4;
+}
+
+.td-location,
+.td-capacity {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+/* 既存の App.css に以下を追記 */
+
+.section-title {
+  font-size: 20px;
+  margin: 40px 0 16px;  /* 上マージン40px、下マージン16px */
+  color: #333;
+}
+/* 既存のスタイルに追記してください */
+
+/* ────────────────────────────────
+   モード切り替えボタン周り
+──────────────────────────────── */
+.mode-switch {
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 800px;  /* 検索バーに合わせておくと見た目が揃う */
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border: 1px solid #888;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-button:hover {
+  background-color: #f5f5f5;
+}
+
+/* 選択中のモードには濃い背景＋文字色を変更 */
+.filter-button.is-active {
+  background-color: #4caf50; /* 好みの色に調整 */
+  color: #fff;
+  border-color: #4caf50;
+}
+
+/* ────────────────────────────────
+   セクションタイトル（テーブル上の見出し）
+──────────────────────────────── */
+.section-title {
+  font-size: 20px;
+  margin: 24px 0 16px;
+  text-align: center;
+  color: #333;
+}
+
+/* （既存の .event-table, .th-*, .td-* などはそのまま流用） */
+/* ─────────────────────────────────────
+   タグ（audience-tag）のスタイル
+──────────────────────────────────── */
+.audience-tags {
+  margin: 4px 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.audience-tag {
+  background-color: #eef6ff;
+  color: #0051ba;
+  border: 1px solid #c0d8ff;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+  white-space: nowrap;
 }
