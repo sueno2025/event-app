@@ -1,4 +1,4 @@
-/* ─────────────── reset 部分 ─────────────── */
+/* リセット */
 * {
   margin: 0;
   padding: 0;
@@ -7,145 +7,114 @@
 body {
   font-family: sans-serif;
 }
-/* ─────────────────────────────────────────── */
 
-/* ───────────────────────────────────────────
-   全体コンテナ（中央寄せ＋最大幅）
-────────────────────────────────────────── */
+/* 全体ラッパー */
 .app {
-  padding-top: 120px;      /* ヘッダー固定分の余白 */
-  max-width: 1200px;       /* 画面幅が広すぎても1200pxまで */
+  padding-top: 120px;      /* ヘッダー分 */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ───────────────────────────────────────────
-   ヘッダー（固定）
-────────────────────────────────────────── */
+/* ヘッダー */
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 80px;
-  background-color: #fff;
+  background: #fff;
   border-bottom: 1px solid #ccc;
   display: flex;
   align-items: center;
   padding: 0 20px;
   z-index: 1000;
 }
-
 .logo-image {
-  max-width: 180px;
-  height: auto;
+  max-width: 180px; height: auto;
   margin-right: 40px;
 }
-
 .user-section {
   margin-left: auto;
-  display: flex;
-  gap: 10px;
+  display: flex; gap: 10px;
 }
-
 .user-section p {
   margin-right: 10px;
 }
 
-/* ───────────────────────────────────────────
-   検索バー
-────────────────────────────────────────── */
+/* 検索バー */
 .search-bar {
   margin: 20px auto;
-  display: flex;
-  gap: 10px;
+  display: flex; gap: 10px;
   max-width: 800px;
+  justify-content: center;
 }
-
 .search-bar input[type="text"] {
   flex: none;
-  width: 300px;        /* ← これで横長すぎを解消 */
-  max-width: 100%;
+  width: 300px; max-width: 100%;
   padding: 8px 10px;
-  border: 1px solid #aaa;
-  border-radius: 4px;
+  border: 1px solid #aaa; border-radius: 4px;
 }
-
 .search-bar button {
   padding: 8px 12px;
-  border: 1px solid #555;
-  background-color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  border: 1px solid #555; border-radius: 4px;
+  background: #fff; cursor: pointer;
+  transition: background-color 0.2s;
 }
 .search-bar button:hover {
-  background-color: #eee;
+  background: #eee;
 }
 
-/* ───────────────────────────────────────────
-   イベント一覧テーブル
-────────────────────────────────────────── */
+/* モード切替ボタン */
+.mode-switch {
+  margin: 20px auto;
+  display: flex; gap: 10px;
+  justify-content: center;
+  max-width: 800px;
+}
+.filter-button {
+  padding: 8px 16px;
+  border: 1px solid #888; border-radius: 4px;
+  background: #fff; cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.filter-button:hover {
+  background: #f5f5f5;
+}
+.filter-button.is-active {
+  background: #4caf50; color: #fff; border-color: #4caf50;
+}
+
+/* テーブル */
 .event-table {
   width: 100%;
-  max-width: 1000px;     /* テーブルの最大幅を指定 */
-  margin: 0 auto 40px;   /* 中央寄せ＋下に余白 */
+  max-width: 1000px;
+  margin: 0 auto 40px;
   border-collapse: collapse;
 }
-
-/* 見出しセル */
 .event-table th {
-  background-color: #4CAF50;
-  color: #fff;
+  background: #4caf50; color: #fff;
   text-align: left;
-  padding: 12px 16px;    /* 左右余白を広めに */
+  padding: 12px 16px;
   border: 1px solid #ddd;
   font-weight: normal;
 }
-
-.event-table .th-date {
-  width: 120px;
-}
-.event-table .th-image {
-  width: 100px;
-}
-.event-table .th-location {
-  width: 90px;
-  text-align: center;
-}
-.event-table .th-capacity {
-  width: 70px;
-  text-align: center;
-}
-
-/* ボディ行 */
-.event-table tbody tr {
-  border-bottom: 1px solid #eee;
-}
-
-/* 通常セル */
+.event-table .th-date { width: 120px; }
+.event-table .th-image { width: 100px; }
+.event-table .th-location { width: 90px; text-align: center; }
+.event-table .th-capacity { width: 70px; text-align: center; }
 .event-table td {
-  padding: 12px 16px;   /* 左右余白を広めに */
-  vertical-align: top;
+  padding: 12px 16px;
   border: 1px solid #ddd;
+  vertical-align: top;
 }
-
 .td-date {
   white-space: pre-line;
-  font-size: 14px;
-  line-height: 1.4;
-  text-align: center;
-  color: #333;
+  font-size: 14px; line-height: 1.4;
+  text-align: center; color: #333;
 }
-
 .event-image {
-  display: block;
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
+  display: block; width: 80px; height: 80px;
+  object-fit: cover; border-radius: 4px;
   margin: 0 auto;
 }
-
 .event-link {
   display: inline-block;
   font-size: 15px;
@@ -154,95 +123,237 @@ body {
   margin-bottom: 6px;
   line-height: 1.2;
 }
-.event-link:hover {
-  text-decoration: underline;
-}
-
-.event-host {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 4px;
-}
-
-.event-description {
-  font-size: 13px;
-  color: #444;
-  line-height: 1.4;
-}
-
-.td-location,
-.td-capacity {
-  text-align: center;
-  font-size: 14px;
-  color: #333;
-}
-/* 既存の App.css に以下を追記 */
-
-.section-title {
-  font-size: 20px;
-  margin: 40px 0 16px;  /* 上マージン40px、下マージン16px */
-  color: #333;
-}
-/* 既存のスタイルに追記してください */
-
-/* ────────────────────────────────
-   モード切り替えボタン周り
-──────────────────────────────── */
-.mode-switch {
-  margin: 20px auto 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  max-width: 800px;  /* 検索バーに合わせておくと見た目が揃う */
-}
-
-.filter-button {
-  padding: 8px 16px;
-  border: 1px solid #888;
-  background-color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.filter-button:hover {
-  background-color: #f5f5f5;
-}
-
-/* 選択中のモードには濃い背景＋文字色を変更 */
-.filter-button.is-active {
-  background-color: #4caf50; /* 好みの色に調整 */
-  color: #fff;
-  border-color: #4caf50;
-}
-
-/* ────────────────────────────────
-   セクションタイトル（テーブル上の見出し）
-──────────────────────────────── */
-.section-title {
-  font-size: 20px;
-  margin: 24px 0 16px;
-  text-align: center;
-  color: #333;
-}
-
-/* （既存の .event-table, .th-*, .td-* などはそのまま流用） */
-/* ─────────────────────────────────────
-   タグ（audience-tag）のスタイル
-──────────────────────────────────── */
+.event-link:hover { text-decoration: underline; }
 .audience-tags {
   margin: 4px 0 8px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+  display: flex; flex-wrap: wrap; gap: 4px;
 }
-
 .audience-tag {
-  background-color: #eef6ff;
-  color: #0051ba;
+  background: #eef6ff; color: #0051ba;
   border: 1px solid #c0d8ff;
   border-radius: 12px;
   padding: 2px 8px;
   font-size: 12px;
   white-space: nowrap;
+}
+.event-host {
+  font-size: 13px; color: #666;
+  margin-bottom: 4px;
+}
+.event-description {
+  font-size: 13px; color: #444;
+  line-height: 1.4;
+}
+.td-location,
+.td-capacity {
+  text-align: center; font-size: 14px; color: #333;
+}
+
+/* 詳細ページ */
+.event-detail {
+  max-width: 800px; margin: 0 auto 40px; padding: 20px;
+}
+.event-detail h1 {
+  font-size: 24px; margin-bottom: 12px;
+}
+.detail-image {
+  width: 100%; max-width: 400px;
+  height: auto;
+  margin: 12px 0; border-radius: 4px;
+}
+.detail-date,
+.detail-location,
+.detail-host,
+.detail-capacity {
+  font-size: 14px; margin-bottom: 8px;
+}
+.detail-description {
+  margin: 16px 0; line-height: 1.6;
+}
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #228B22;
+  text-decoration: none;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+/* 参加者募集／お手伝い募集ボタン */
+.filter-button {
+  padding: 8px 16px;
+  border: 1px solid #888;
+  background-color: #fff;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.filter-button:hover {
+  background-color: #f5f5f5;
+}
+/* 選択中：背景・文字色・ボーダーを目立たせる */
+.filter-button.is-active {
+  background-color: #4caf50;   /* 緑ベース */
+  color: #fff;
+  border-color: #4caf50;
+}
+
+/* テーブルヘッダー */
+.event-table th {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px 16px;
+  border: 1px solid #ddd;   /* ヘッダーセルのボーダー */
+  text-align: left;
+}
+
+/* EventDetail の追加スタイル */
+.detail-schedule,
+.detail-fee,
+.detail-contact {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #444;
+}
+
+.detail-points {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.detail-points li {
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* 申し込みボタン */
+.apply-button-wrap {
+  text-align: center;
+  margin: 24px 0;
+}
+.apply-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.apply-button:hover {
+  background-color: #45a049;
+}
+/* 長文説明 */
+.detail-long-description p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 注意事項リスト */
+.detail-attention {
+  margin: 12px 0;
+  padding-left: 20px;
+}
+.detail-attention li {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* 定員と申し込み人数表示 */
+.detail-capacity {
+  font-size: 14px;
+  margin: 12px 0;
+  color: #333;
+}
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #888;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #f5f5f5;
+}
+
+.pagination button.is-active {
+  background: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* タグをクリック可能に */
+.audience-tag.clickable {
+  cursor: pointer;
+}
+
+.tag-filter-active {
+  margin: 8px auto;
+  max-width: 800px;
+  padding: 4px 8px;
+  background: #fff4e5;
+  border: 1px solid #f0c36d;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag-filter-active button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* テーブル下部の no-results */
+.no-results {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+/* お気に入りハート */
+.th-fav, .td-fav {
+  width: 40px;
+  text-align: center;
+}
+
+.fav-heart {
+  cursor: pointer;
+  color: #ccc;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.fav-heart.is-active {
+  color: #e74c3c;
+}
+
+
+
+/* セクションタイトルを中央揃え */
+.section-title {
+  text-align: center;
+  margin: 32px 0 16px;      /* 上下の余白をお好みで調整 */
+  font-size: 1.5rem;        /* 必要に応じてサイズ調整 */
 }
