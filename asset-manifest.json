@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/sueno2025/event-app/static/css/main.d930a77f.css",
-    "main.js": "/sueno2025/event-app/static/js/main.06a56e1c.js",
-    "static/media/headerImage.png": "/sueno2025/event-app/static/media/headerImage.47326bf247869d5c1682.png",
-    "index.html": "/sueno2025/event-app/index.html",
-    "main.d930a77f.css.map": "/sueno2025/event-app/static/css/main.d930a77f.css.map",
-    "main.06a56e1c.js.map": "/sueno2025/event-app/static/js/main.06a56e1c.js.map"
+    "main.css": "/event-app/static/css/main.d930a77f.css",
+    "main.js": "/event-app/static/js/main.246b2e74.js",
+    "static/media/headerImage.png": "/event-app/static/media/headerImage.47326bf247869d5c1682.png",
+    "index.html": "/event-app/index.html",
+    "main.d930a77f.css.map": "/event-app/static/css/main.d930a77f.css.map",
+    "main.246b2e74.js.map": "/event-app/static/js/main.246b2e74.js.map"
   },
   "entrypoints": [
     "static/css/main.d930a77f.css",
-    "static/js/main.06a56e1c.js"
+    "static/js/main.246b2e74.js"
   ]
 }
