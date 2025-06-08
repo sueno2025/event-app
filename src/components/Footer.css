@@ -8,6 +8,7 @@
   color: #666;
 }
 
+/* 中央揃えと横並びを制御するコンテナ */
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -31,12 +32,15 @@
 }
 
 /* ナビリンク部分 */
+/* src/components/Footer.css */
+
 .footer-nav {
-  flex: 2 1 auto;
+  /* 元々の設定をリセットしつつ */
+  flex: 0 1 auto;          /* 自動で収まる幅 */
+  margin: 0 auto;          /* 左右マージンを自動に */
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
+  justify-content: center; /* 中央寄せ */
+  gap: 24px;               /* リンク間隔はお好みで */
 }
 
 .footer-link {
@@ -63,11 +67,8 @@
     align-items: center;
     text-align: center;
   }
-  .footer-logo {
-    margin-bottom: 12px;
-  }
   .footer-nav {
-    margin-bottom: 12px;
+    margin: 12px 0;
   }
   .footer-copy {
     text-align: center;

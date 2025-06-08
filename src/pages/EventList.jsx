@@ -147,7 +147,7 @@ const toggleFavorite = (id) => {
         </thead>
         <tbody>
           {paginated.map((ev) => (
-            <tr key={ev.id}>
+            <tr key={ev.id} className="card">
               <td className="td-fav">
                 <span
                   className={`fav-heart ${favorites.includes(ev.id) ? "is-active" : ""}`}

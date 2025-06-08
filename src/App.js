@@ -15,6 +15,7 @@ function App() {
   const handleLoginLogout = () => {
     if (user) {
       // ログアウト
+      alert("ログアウトします。");
       setUser(null);
     } else {
       // ログイン
@@ -40,7 +41,7 @@ function App() {
             {user ? "ログアウト" : "ログイン"}
           </button>
           {!user && (
-            <button className="register-button">
+            <button className="register-button" onClick={() => alert("デモ版なので登録ページは用意しておりません。")}>
               会員登録
             </button>
           )}

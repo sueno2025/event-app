@@ -3,6 +3,12 @@ import React from "react";
 import "./Footer.css";
 
 const Footer = () => {
+  // デモアラート
+  const handleDemoAlert = (e) => {
+    e.preventDefault();
+    alert("デモページの為、リンクは存在しません。");
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -13,16 +19,16 @@ const Footer = () => {
 
         {/* ナビリンク */}
         <div className="footer-nav">
-          <a href="/about" className="footer-link">
+          <a href="/about" className="footer-link" onClick={handleDemoAlert}>
             会社情報
           </a>
-          <a href="/contact" className="footer-link">
+          <a href="/contact" className="footer-link" onClick={handleDemoAlert}>
             お問い合わせ
           </a>
-          <a href="/terms" className="footer-link">
+          <a href="/terms" className="footer-link" onClick={handleDemoAlert}>
             利用規約
           </a>
-          <a href="/privacy" className="footer-link">
+          <a href="/privacy" className="footer-link" onClick={handleDemoAlert}>
             プライバシーポリシー
           </a>
         </div>
