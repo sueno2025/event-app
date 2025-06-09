@@ -82,7 +82,50 @@ body { font-family: sans-serif; line-height: 1.6; }
   transition: color 0.2s;
 }
 .fav-heart.is-active { color: #e74c3c; }
+/* ────────── 絞り込み中のタグ表示（中央揃え版） ────────── */
+.tag-filter-active {
+  max-width: 400px;            /* モード切替／検索バーと揃える */
+  margin: 12px auto;           /* 左右 auto で中央寄せ */
+  padding: 8px 16px;
+  background-color: #fff8e1;
+  border: 1px solid #ffd54f;
+  border-radius: 4px;
+  display: flex;               /* ← inline-flex から変更 */
+  justify-content: center;     /* 中央揃え */
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-size: 14px;
+  color: #333;
+}
+/* タグにホバー時のカーソル */
+.audience-tag.clickable {
+  cursor: pointer;
+}
 
+.audience-tag.clickable:hover {
+  background-color: #d8eaff; /* オプション：ホバー時の色変化 */
+}
+
+/* 中のテキスト */
+.tag-filter-active span {
+  font-weight: bold;
+}
+
+/* クリアボタン */
+.tag-filter-active button {
+  padding: 2px 6px;
+  border: none;
+  background: #ffd54f;
+  color: #333;
+  font-size: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.tag-filter-active button:hover {
+  background: #ffca28;
+}
 /* ページネーション */
 .pagination {
   display: flex; justify-content: center; gap: 8px; margin: 24px 0;

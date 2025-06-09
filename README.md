@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+ロコナビ (Local Navi)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+地域のイベント情報をまとめたシンプルなReactアプリケーション。
+「参加者募集イベント」と「お手伝い募集イベント」を切り替えて一覧表示し、詳細ページ・お気に入り登録・レスポンシブ対応などの機能を備えています。
 
-## Available Scripts
+ プロジェクト構成
+ event-app/
+├── node_modules/
+├── public/
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── Footer.js
+│   │   ├── Footer.css
+│   │   └── ScrollToTop.jsx
+│   ├── data/
+│   │   └── events.js
+│   ├── images/
+│   │   └── headerImage.png
+│   ├── pages/
+│   │   ├── EventList.jsx
+│   │   └── EventDetail.jsx
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
+├── .gitignore
+├── package.json
+└── README.md
 
-In the project directory, you can run:
+セットアップ
 
-### `npm start`
+1.リポジトリをクローン
+    git clone <リポジトリURL>
+    cd event-app
+2.依存ライブラリをインストール
+    npm install
+3.開発用サーバー起動
+    npm start
+ブラウザで http://localhost:3000 を開きます。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+スクリプト
+npm start  開発サーバー起動
+npm run build  本番用ビルド
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+主な機能
 
-### `npm test`
+モード切替
+    参加者募集イベント ⇔ お手伝い募集イベント
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+URL同期 & ページネーション
+    クエリパラメータに mode, page, q, tag を保持
 
-### `npm run build`
+5件ずつのページネーション
+    キーワード・タグ検索
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+イベントタイトル・説明・主催者名でキーワード検索
+    タグクリックで絞り込み
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+お気に入り登録
+    ハートアイコンでトグル
+    ログイン状態でのみ利用可能 & localStorageに保持
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+簡易ログイン
+    ゲスト／ユーザー切り替え（今回はフロントページのみの作成なので、ログインページ/認証機能等は省略してあります）
+    アラートでログイン・ログアウトを通知
 
-### `npm run eject`
+レスポンシブ対応
+    スマホ・タブレット・PCそれぞれ最適化
+    スマホではカードレイアウトに切り替え
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+詳細ページ
+    イベントごとの詳細情報
+    申し込みボタン（デモアラート）
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+開発者
+    上野 哲
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ライセンス
+    MIT
