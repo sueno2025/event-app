@@ -307,13 +307,48 @@ body { font-family: sans-serif; line-height: 1.6; }
   .pagination button {
     padding: 6px 10px;
   }
+  .detail-image {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    margin: 12px auto;
+    border-radius: 4px;
+  }
 }
 
 /* ────────── レスポンシブ PC大画面 1200px以上 ────────── */
 @media (min-width: 1200px) {
-
+  /* 全体余白 */
   .header,
   .footer-container {
     padding: 0 40px;
+  }
+
+  /* 一覧テーブルを常に100%幅で固定レイアウトに */
+  .event-table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;  /* 列幅の再計算を防止 */
+    overflow-x: visible;
+  }
+  .detail-image {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    margin: 12px auto;
+    border-radius: 4px;
+  }
+
+  /* 各列の固定幅設定（合計が100%を超えないように調整） */
+  .th-fav { width: 40px; }
+  .th-date { width: 120px; }
+  .th-image { width: 100px; }
+  .th-location { width: 150px; }
+  .th-capacity { width: 80px; }
+
+  /* イベント名列は残り幅を使う */
+  .th-title {
+    /* 明示的にパーセンテージを指定してもOKです */
+    /* width: calc(100% - (40px + 120px + 100px + 150px + 80px)); */
   }
 }
