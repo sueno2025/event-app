@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/event-app/static/css/main.be0f8aa9.css",
+    "main.css": "/event-app/static/css/main.ce586990.css",
     "main.js": "/event-app/static/js/main.246b2e74.js",
     "static/media/headerImage.png": "/event-app/static/media/headerImage.47326bf247869d5c1682.png",
     "index.html": "/event-app/index.html",
-    "main.be0f8aa9.css.map": "/event-app/static/css/main.be0f8aa9.css.map",
+    "main.ce586990.css.map": "/event-app/static/css/main.ce586990.css.map",
     "main.246b2e74.js.map": "/event-app/static/js/main.246b2e74.js.map"
   },
   "entrypoints": [
-    "static/css/main.be0f8aa9.css",
+    "static/css/main.ce586990.css",
     "static/js/main.246b2e74.js"
   ]
 }
